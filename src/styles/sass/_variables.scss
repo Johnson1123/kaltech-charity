@@ -1,0 +1,33 @@
+$primaryColor: #163c45;
+$secondaryColor: #c0fecf;
+$darkColor: #111;
+$whiteColor: #fff;
+
+// background
+
+$bgPrimary: #163c45;
+$bgSecodary: #c0fecf;
+$bgWhite: #fff;
+$bgBlack: #111;
+
+// font-size variable
+
+$smallFontSize: 12px;
+$xSmallFontSize: 10px;
+$mediumFontSize: 16px;
+$xMediumFontSize: 14px;
+$xLargeSize: 18px;
+$largeSize: 20px;
+
+// font-family
+
+$primaryFont: "Poppins" serif;
+$secondaryFont: "Rubik" serif;
+
+$xxLayout: "only screen and (min-width: 1366px) and (max-width: 1600px)";
+$xlLayout: "only screen and (min-width: 1200px) and (max-width: 1365px)";
+$lgLayout: "only screen and (min-width: 992px) and (max-width: 1199px)";
+$mdLayout: "only screen and (min-width: 768px) and (max-width: 991px)";
+$xmdLayout: "only screen and (max-width: 767px)";
+$smLayout: "only screen and (min-width: 576px) and (max-width: 767px)";
+$xxsLayout: "only screen and (min-width: 320px) and (max-width: 479px)";

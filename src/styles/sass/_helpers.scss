@@ -1,0 +1,58 @@
+// flex mixin
+@mixin flexRowCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexVerticalCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexRowBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexRowEnd {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex($dir, $justify, $align) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// text mixins
+
+@mixin largeTitleText {
+  @media #{$xxLayout - $xxsLayout} {
+    font-family: $primaryColor;
+    font-size: $largeSize;
+    font-weight: 700;
+  }
+  @media #{$xxLayout - $xxsLayout} {
+    font-family: $primaryColor;
+    font-size: $largeSize;
+    font-weight: 700;
+  }
+}
+@mixin mediumTitleText {
+  font-family: $primaryColor;
+  font-size: $mediumFontSize;
+  font-weight: 700;
+}
+@mixin smallTitleText {
+  font-family: $primaryColor;
+  font-size: $smallFontSize;
+  font-weight: 700;
+}
