@@ -1,11 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import ChurchCard from "./components/medium/ChruchCard";
+import "./App.scss";
+import Header from "./components/large/Header";
+import Transparent from "./components/small/btn/Transparent";
+import TextMedium from "./components/small/TextMedium";
 
 function App() {
   return (
     <div>
-      <ChurchCard />
+      <Header />
+      <Transparent />
+      <TextMedium text="At Charity 128, we prioritize transparency, and inclusivity" />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+@use "src/styles/sass/_variables.scss" as v;
+
 // flex mixin
 @mixin flexRowCenter {
   display: flex;
@@ -34,25 +36,31 @@
 
 // text mixins
 
-@mixin largeTitleText {
-  @media #{$xxLayout - $xxsLayout} {
-    font-family: $primaryColor;
-    font-size: $largeSize;
-    font-weight: 700;
-  }
-  @media #{$xxLayout - $xxsLayout} {
-    font-family: $primaryColor;
-    font-size: $largeSize;
-    font-weight: 700;
-  }
-}
+// @mixin largeTitleText {
+//   @media #{$xxLayout - $xxsLayout} {
+//     font-family: $primaryColor;
+//     font-size: $largeSize;
+//     font-weight: 700;
+//   }
+//   @media #{$xxLayout - $xxsLayout} {
+//     font-family: $primaryColor;
+//     font-size: $largeSize;
+//     font-weight: 700;
+//   }
+// }
 @mixin mediumTitleText {
-  font-family: $primaryColor;
-  font-size: $mediumFontSize;
-  font-weight: 700;
+  font-family: v.$primaryColor;
+  font-size: v.$mediumFontSize;
+  font-weight: 300;
 }
 @mixin smallTitleText {
   font-family: $primaryColor;
   font-size: $smallFontSize;
   font-weight: 700;
+}
+@mixin btnText {
+  border: none;
+  padding: 20px 40px;
+  font-size: v.$mediumFontSize;
+  font-weight: 400;
 }

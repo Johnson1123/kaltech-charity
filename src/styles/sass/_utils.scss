@@ -1,0 +1,7 @@
+@use "src/styles/sass/variables.scss" as v;
+@use "src/styles/sass/helpers.scss" as c;
+
+.text__medium {
+  @include c.mediumTitleText;
+  color: v.$primaryColor;
+}

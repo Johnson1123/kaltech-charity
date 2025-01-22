@@ -100,5 +100,27 @@
       "category": "Education",
       "links": "education"
     }
+  ],
+  "links": [
+    {
+      "label": "Home",
+      "link": "/"
+    },
+    {
+      "label": "About Us",
+      "link": "/about"
+    },
+    {
+      "label": "Causes",
+      "link": "/cause"
+    },
+    {
+      "label": "Events",
+      "link": "/events"
+    },
+    {
+      "label": "Projects",
+      "link": "/project"
+    }
   ]
 }
