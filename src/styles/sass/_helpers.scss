@@ -1,5 +1,11 @@
 @use "src/styles/sass/_variables.scss" as v;
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 // flex mixin
 @mixin flexRowCenter {
   display: flex;
@@ -16,6 +22,12 @@
 @mixin flexRowBetween {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexVerticalBetween {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -53,14 +65,37 @@
   font-size: v.$mediumFontSize;
   font-weight: 300;
 }
-@mixin smallTitleText {
+@mixin smallText {
   font-family: $primaryColor;
-  font-size: $smallFontSize;
-  font-weight: 700;
+  font-size: $mediumFontSize;
+  font-weight: 400;
 }
 @mixin btnText {
   border: none;
   padding: 20px 40px;
   font-size: v.$mediumFontSize;
   font-weight: 400;
+}
+
+@mixin TitleText($color) {
+  color: $color;
+  font-size: v.$xxLargeSize;
+  font-weight: 700;
+}
+@mixin mediumTitle($color) {
+  color: $color;
+  font-size: v.$xLargeSize;
+  font-weight: 700;
+}
+@mixin paraText($size, $color) {
+  color: $color;
+  font-size: $size;
+  font-weight: 400;
+}
+
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
 }

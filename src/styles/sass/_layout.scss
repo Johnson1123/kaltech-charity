@@ -1,0 +1,14 @@
+@use "src/styles/sass/_helpers.scss" as c;
+@use "src/styles/sass/_variables.scss" as v;
+.main__layout {
+  width: 100%;
+  padding: 10px 10%;
+
+  @media #{v.$mdLayout} {
+    padding: 10px 5%;
+  }
+
+  @media #{v.$xLayout} {
+    padding: 10px 5%;
+  }
+}

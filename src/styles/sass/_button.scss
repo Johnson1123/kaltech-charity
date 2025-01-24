@@ -5,11 +5,22 @@
   @include c.btnText;
   border-radius: 50px;
   border: 1px solid v.$primaryColor;
-  transition: all 0.5s;
+  transition: all 1s;
   &:hover {
     border: none;
     background-color: v.$bgSecodary;
     transform: scale(0.9);
-    padding: 19px 40px;
+  }
+}
+.readMore__btn {
+  @include c.flexRowCenter;
+  column-gap: 5px;
+  transition: all 0.4s;
+  border: none;
+  color: v.$primaryColor;
+  font-weight: 400;
+  background-color: transparent;
+  &:hover {
+    margin-left: 10px;
   }
 }

@@ -4,16 +4,65 @@
 .header__container {
   @include c.flexRowCenter;
   background-color: #fff;
-  padding: 10px 10%;
+  padding: 10px 0;
+  position: relative;
+
+  @media #{v.$xLayout} {
+    padding: 5px 0;
+  }
 }
 
 .header__wrapper {
   @include c.flexRowBetween;
   background-color: v.$bgPrimary;
-  height: 80px;
-  width: 95%;
-  padding: 5px 2%;
+  height: 100px;
+  width: 80%;
+  padding: 10px 2%;
   border-radius: 60px;
+
+  @media #{v.$lgLayout} {
+    width: 90%;
+  }
+
+  @media #{v.$mdLayout} {
+    width: 95%;
+    height: 80px;
+  }
+
+  @media #{v.$xLayout} {
+    width: 98%;
+    height: 70px;
+    padding: 5px 15px;
+    border-radius: 35px;
+  }
+
+  .header__right {
+    @include c.flexRowCenter;
+    gap: 20px;
+
+    @media #{v.$xLayout} {
+      gap: 10px;
+    }
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: v.$whiteColor;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: v.$secondaryColor;
+    }
+
+    @media #{v.$xLayout} {
+      display: block;
+    }
+  }
 }
 
 .logo__wrapper {
@@ -23,6 +72,14 @@
     font-size: 32px;
     font-weight: 700;
     text-decoration: none;
+
+    @media #{v.$mdLayout} {
+      font-size: 28px;
+    }
+
+    @media #{v.$xLayout} {
+      font-size: 24px;
+    }
   }
   // img {
   //   width: 100%;
@@ -34,6 +91,35 @@
   @include c.flexRowBetween;
   list-style: none;
   gap: 25px;
+
+  @media #{v.$mdLayout} {
+    gap: 15px;
+  }
+
+  @media #{v.$xLayout} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .nav__item {
+    @media #{v.$xLayout} {
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn 0.3s forwards;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.1}s;
+        }
+      }
+    }
+  }
+
   .nav__link {
     font-size: v.$xLargeSize;
     font-weight: 300;
@@ -41,8 +127,77 @@
     cursor: pointer;
     transition: all 0.3s;
     text-decoration: none;
-    &:hover {
+    position: relative;
+
+    @media #{v.$lgLayout} {
+      font-size: v.$largeFontSize;
+    }
+
+    @media #{v.$mdLayout} {
+      font-size: v.$mediumFontSize;
+    }
+
+    @media #{v.$xLayout} {
+      display: block;
+      padding: 10px;
+      width: 100%;
+      font-size: v.$largeFontSize;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: v.$secondaryColor;
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
       color: v.$secondaryColor;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Add animation keyframes
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav__wrapper {
+  @media #{v.$xLayout} {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: v.$bgPrimary;
+    padding: 20px;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    overflow-y: auto;
+
+    &.nav-active {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
@@ -51,8 +206,22 @@
   @include c.btnText;
   background-color: v.$bgSecodary;
   color: v.$primaryColor;
-  border-radius: 50px;
+  border-radius: 40px;
   transition: all 0.5s;
+  @media #{v.$lgLayout} {
+    padding: 20px;
+  }
+
+  @media #{v.$mdLayout} {
+    padding: 8px 15px;
+    font-size: v.$mediumFontSize;
+  }
+
+  @media #{v.$xLayout} {
+    padding: 6px 12px;
+    font-size: v.$xMediumFontSize;
+  }
+
   &:hover {
     background-color: v.$bgOther;
     transform: scale(0.9);

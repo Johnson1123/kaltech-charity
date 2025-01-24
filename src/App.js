@@ -1,14 +1,14 @@
 import "./App.scss";
+import Footer from "./components/large/Footer";
 import Header from "./components/large/Header";
-import Transparent from "./components/small/btn/Transparent";
-import TextMedium from "./components/small/TextMedium";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div>
       <Header />
-      <Transparent />
-      <TextMedium text="At Charity 128, we prioritize transparency, and inclusivity" />
+      <Home />
+      <Footer />
     </div>
   );
 }

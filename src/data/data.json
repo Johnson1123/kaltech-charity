@@ -2,89 +2,112 @@
   "mission": [
     {
       "title": "Education for All",
-      "discription": "Charity is dedicated to ensuring that every child has access to quality education.",
-      "icon": ""
+      "description": "Charity is dedicated to ensuring that every child has access to quality education.",
+      "icon": "Icon"
     },
     {
       "title": "Health and Wellness",
-      "discription": "Our commitment to health and wellness extends across borders.",
-      "icon": ""
+      "description": "Our commitment to health and wellness extends across borders.",
+      "icon": "Icon"
     },
     {
       "title": "Disaster Relief",
-      "discription": "In times of crisis, Charity responds swiftly to provide emergency relief.",
-      "icon": ""
+      "description": "In times of crisis, Charity responds swiftly to provide emergency relief.",
+      "icon": "Icon"
     },
     {
       "title": "Community Development   ",
-      "discription": "Charity invests in sustainable community development projects to create positive change.",
+      "description": "Charity invests in sustainable community development projects to create positive change.",
       "icon": ""
     }
   ],
   "help": [
     {
       "title": "Monetary Donations",
-      "discription": "Your financial support is a lifeline for our projects and initiatives.",
+      "description": "Your financial support is a lifeline for our projects and initiatives.",
       "icons": ""
     },
     {
       "title": "Become a Monthly Donor",
-      "discription": "Consider becoming a monthly donor to provide consistent.",
+      "description": "Consider becoming a monthly donor to provide consistent.",
       "icons": ""
     },
     {
       "title": "Corporate Partnerships",
-      "discription": "Charity welcomes partnerships with corporations that share.",
+      "description": "Charity welcomes partnerships with corporations that share.",
       "icons": ""
     },
     {
       "title": "Volunteer Your Time",
-      "discription": "If you're passionate about creating positive change hands-on.",
+      "description": "If you're passionate about creating positive change hands-on.",
       "icons": ""
     }
   ],
   "programs": [
     {
-      "image": "",
+      "image": "Icon",
       "title": "Environmental Conservation Fund",
       "text": "Chari allocates funds to support education through scholarships and the improvement of school infrastructure.",
       "amount_needed": "30000",
       "amount_raised": "20000"
     },
     {
-      "image": "",
+      "image": "Icon",
       "title": "Community Development Projects",
       "text": "Chari invests in community development projects that aim to uplift entire communities economically.",
       "amount_needed": "43000",
       "amount_raised": "12000"
     },
     {
-      "image": "",
+      "image": "Icon",
       "title": "Education Fund for scholarship",
       "text": "Chari allocates funds to support education through scholarships and the improvement of school infrastructure.",
       "amount_needed": "21000",
       "amount_raised": "2000"
     },
     {
-      "image": "",
+      "image": "Icon",
       "title": "Education Fund for scholarship",
       "text": "Chari allocates funds to support education through scholarships and the improvement of school infrastructure.",
       "amount_needed": "21000",
       "amount_raised": "2000"
     },
     {
-      "image": "",
+      "image": "Icon",
       "title": "Education Fund for scholarship",
       "text": "Chari allocates funds to support education through scholarships and the improvement of school infrastructure.",
       "amount_needed": "21000",
       "amount_raised": "2000"
     },
     {
-      "image": "",
+      "image": "Icon",
       "title": "Education Fund for scholarship",
       "text": "Chari allocates funds to support education through scholarships and the improvement of school infrastructure.",
       "amount_needed": "21000",
       "amount_raised": "2000"
+    }
+  ],
+  "project": [
+    {
+      "image": "",
+      "category": "Emergency",
+      "description": "Establish a rapid response mechanism for immediate assistance during disasters and humanitarian crises.",
+      "to": "/emergency",
+      "title": "Healthcare Access Initiative"
+    },
+    {
+      "image": "",
+      "category": "Education",
+      "description": "Establish a rapid response mechanism for immediate assistance during disasters and humanitarian crises.",
+      "to": "/education",
+      "title": "Healthcare Access Initiative"
+    },
+    {
+      "image": "",
+      "category": "Infrastucture",
+      "description": "Establish a rapid response mechanism for immediate assistance during disasters and humanitarian crises.",
+      "to": "/infrastucture",
+      "title": "Healthcare Access Initiative"
     }
   ],
   "category": [

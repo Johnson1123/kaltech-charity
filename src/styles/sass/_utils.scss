@@ -1,7 +1,38 @@
 @use "src/styles/sass/variables.scss" as v;
 @use "src/styles/sass/helpers.scss" as c;
 
-.text__medium {
-  @include c.mediumTitleText;
-  color: v.$primaryColor;
+.title__text-primary {
+  @include c.TitleText(v.$primaryColor);
+
+  @media #{v.$lgLayout} {
+    font-size: 28px;
+  }
+}
+.title__text-white {
+  @include c.TitleText(v.$whiteColor);
+  @media #{v.$lgLayout} {
+    font-size: 28px;
+  }
+}
+.title__medium-primary {
+  @include c.mediumTitle(v.$primaryColor);
+}
+.title__medium-white {
+  @include c.mediumTitle(v.$whiteColor);
+}
+.para__small-text-primary {
+  @include c.paraText(v.$largeFontSize, v.$primaryColor);
+  @media #{v.$lgLayout} {
+    font-size: 16px;
+  }
+  line-height: 1.6;
+  margin-top: 20px;
+}
+.para__small-text-white {
+  @include c.paraText(v.$largeFontSize, v.$whiteColor);
+  @media #{v.$lgLayout} {
+    font-size: 16px;
+  }
+  line-height: 1.6;
+  margin-top: 20px;
 }
