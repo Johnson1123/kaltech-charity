@@ -8,6 +8,8 @@ import Program from "../components/large/Program";
 import Event from "../components/large/Event";
 import Banner from "../components/large/Banner";
 import BannerBottom from "../components/medium/BannerBottom";
+import Scrolling from "../components/medium/Scrolling";
+import Community from "../components/large/Community";
 
 function Home() {
   return (
@@ -17,6 +19,9 @@ function Home() {
       <Mission />
       <Help />
       <Program />
+      <Community />
+      <Scrolling />
+
       <Project />
       <Event />
       <BannerBottom />

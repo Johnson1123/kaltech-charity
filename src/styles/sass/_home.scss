@@ -1750,3 +1750,123 @@
     }
   }
 }
+
+.scrolling__container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 30px 0;
+  background: v.$bgSecodary;
+
+  .scrolling__wrapper {
+    display: flex;
+    align-items: center;
+    animation: scroll 20s linear infinite;
+    gap: 20px;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.scroll__item-wrapper {
+  min-width: 300px;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: transform 0.3s ease;
+  .para__small-text-primary {
+    margin-top: 0;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  @media #{v.$mdLayout} {
+    min-width: 250px;
+    padding: 12px 20px;
+  }
+
+  @media #{v.$xLayout} {
+    min-width: 200px;
+    padding: 10px 15px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.community__container {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background: v.$bgWhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  .community__image-top-wrapper,
+  .community__image-buttom-wrapper {
+    img {
+      width: 45%;
+      height: 250px;
+    }
+    img {
+      &.big {
+        width: 200px;
+        height: 250px;
+      }
+      &.small {
+        width: 150px;
+        height: 200px;
+      }
+      &.buttom-right {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+      }
+      &.buttom-left {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+      }
+      &.top-right {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+      }
+      &.top-left {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+    }
+  }
+  .community__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    .number {
+      font-size: 50px;
+      font-weight: 900;
+      margin-top: 50px;
+    }
+    .para__small-text-primary {
+      margin-top: 50px;
+    }
+    .button__wrapper {
+      margin-top: 20px;
+    }
+  }
+}
