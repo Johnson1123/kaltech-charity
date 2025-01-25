@@ -114,6 +114,7 @@
       }
     }
   }
+
   .banner__bottom {
     position: absolute;
     bottom: 0;
@@ -210,6 +211,7 @@
       display: none;
     }
   }
+
   .title__wrapper {
     position: relative;
     width: 100%;
@@ -1537,14 +1539,16 @@
         margin-bottom: 12px;
         color: v.$secondaryColor;
         display: flex;
-        justify-content: center;
+
         align-items: center;
         gap: 10px;
 
         color: v.$whiteColor;
         text-decoration: none;
         transition: color 0.3s;
-
+        @media #{v.$xLayout} {
+          justify-content: center;
+        }
         &:hover {
           color: v.$secondaryColor;
         }
@@ -1673,6 +1677,7 @@
 }
 
 .bannerBottom__conatiner {
+  position: relative;
   width: 100%;
   height: 500px;
   background-image: url("../../assets/images/Side-Image.png");
@@ -1685,30 +1690,75 @@
   margin-top: 50px;
   border-radius: 20px;
   .content__wrapper {
-    width: 60%;
+    width: 100%;
   }
-  .testimonial__content {
-    background: #fff;
-    border-radius: 50px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .testimonial__text {
-      font-size: v.$largeFontSize;
-      color: v.$primaryColor;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      font-style: italic;
-
-      @media #{v.$mdLayout} {
-        font-size: v.$mediumFontSize;
+  .testimonial__inverted-content {
+    width: 60%;
+    margin: 0 auto;
+    background-color: transparent;
+    .testimonial__text-wrapper {
+      position: relative;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      background: v.$bgWhite;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border-bottom-right-radius: 0px;
+      width: 500px;
+      margin: 0 auto;
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        right: -45px;
+        bottom: 0;
+        width: 50px;
+        height: 90px;
+        background-color: transparent;
+        border-bottom-left-radius: 40px;
+        box-shadow: 0 40px 0 #fff;
+      }
+      .testimonial__text {
+        font-size: v.$largeFontSize;
+        color: v.$primaryColor;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        font-style: italic;
+        @media #{v.$mdLayout} {
+          font-size: v.$mediumFontSize;
+        }
       }
     }
 
     .testimonial__author {
+      position: relative;
+      left: 15%;
+      top: 0;
+      z-index: 1;
+      width: 440px;
+      padding: 10px 20px;
+      border-radius: 40px;
+      border-top-left-radius: 0px;
+      background: v.$bgWhite;
       align-self: flex-end;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      &::before {
+        content: "";
+        position: absolute;
+        left: -39px;
+        top: 0%;
+        z-index: -1;
+        width: 40px;
+        height: 60px;
+        background-color: transparent;
+        border-top-right-radius: 45px;
+        box-shadow: 0 -30px 0 #fff;
+      }
       h4 {
         color: v.$primaryColor;
         font-size: v.$mediumFontSize;
@@ -1724,24 +1774,33 @@
     }
   }
 
-  .swiper-pagination {
-    position: relative;
-    margin-top: 30px;
-
-    .swiper-pagination-bullet {
-      width: 10px;
-      height: 10px;
-      background-color: v.$primaryColor;
-      opacity: 0.5;
-      transition: all 0.3s ease;
-
-      &-active {
-        opacity: 1;
-        transform: scale(1.2);
+  .testimonial__content {
+    width: 95%;
+    margin: 0 auto;
+    background: v.$bgWhite;
+    padding: 40px 20px;
+    border-radius: 10px;
+    .testimonial__text {
+      text-align: center;
+      @media #{v.$mdLayout} {
+        font-size: v.$mediumFontSize;
+      }
+      @media #{v.$xLayout} {
+        font-size: v.$mediumFontSize + 10px;
       }
     }
   }
+  .testimonial__author {
+    .title__medium-primary {
+      text-align: center;
+      margin-top: 20px;
+    }
+    p {
+      width: 100%;
 
+      text-align: center;
+    }
+  }
   @media #{v.$xLayout} {
     padding: 40px 0;
 
@@ -1751,10 +1810,12 @@
   }
 }
 
+// scolling component style
 .scrolling__container {
   width: 100%;
   overflow: hidden;
   position: relative;
+  z-index: 1;
   margin: 30px 0;
   background: v.$bgSecodary;
 
@@ -1803,6 +1864,7 @@
   }
 }
 
+// community component styles
 .community__container {
   position: relative;
   min-height: 600px;

@@ -87,85 +87,6 @@
   // }
 }
 
-.nav__list {
-  @include c.flexRowBetween;
-  list-style: none;
-  gap: 25px;
-
-  @media #{v.$mdLayout} {
-    gap: 15px;
-  }
-
-  @media #{v.$xLayout} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    gap: 20px;
-  }
-
-  .nav__item {
-    @media #{v.$xLayout} {
-      width: 100%;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: slideIn 0.3s forwards;
-
-      @for $i from 1 through 10 {
-        &:nth-child(#{$i}) {
-          animation-delay: #{$i * 0.1}s;
-        }
-      }
-    }
-  }
-
-  .nav__link {
-    font-size: v.$xLargeSize;
-    font-weight: 300;
-    color: v.$whiteColor;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    position: relative;
-
-    @media #{v.$lgLayout} {
-      font-size: v.$largeFontSize;
-    }
-
-    @media #{v.$mdLayout} {
-      font-size: v.$mediumFontSize;
-    }
-
-    @media #{v.$xLayout} {
-      display: block;
-      padding: 10px;
-      width: 100%;
-      font-size: v.$largeFontSize;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: v.$secondaryColor;
-      transition: width 0.3s ease;
-    }
-
-    &:hover,
-    &.active {
-      color: v.$secondaryColor;
-
-      &::after {
-        width: 100%;
-      }
-    }
-  }
-}
-
 // Add animation keyframes
 @keyframes slideIn {
   from {
@@ -181,12 +102,12 @@
 .nav__wrapper {
   @media #{v.$xLayout} {
     position: fixed;
-    top: 80px;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: calc(100vh - 80px);
-    background-color: v.$bgPrimary;
-    padding: 20px;
+    width: 80%;
+    height: calc(100vh);
+    background-color: v.$bgWhite;
+    padding: 20px 10px;
     transform: translateX(-100%);
     opacity: 0;
     visibility: hidden;
@@ -198,6 +119,94 @@
       transform: translateX(0);
       opacity: 1;
       visibility: visible;
+    }
+  }
+  .nav-logo {
+    display: none;
+    margin: 20px 10px;
+    @media #{v.$mdLayout} {
+      display: block;
+    }
+
+    @media #{v.$xLayout} {
+      display: block;
+    }
+  }
+
+  .nav__list {
+    @include c.flexRowBetween;
+    list-style: none;
+    gap: 25px;
+
+    @media #{v.$mdLayout} {
+      gap: 15px;
+    }
+
+    @media #{v.$xLayout} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+    }
+
+    .nav__item {
+      @media #{v.$xLayout} {
+        width: 100%;
+        text-align: left;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideIn 0.3s forwards;
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.1}s;
+          }
+        }
+      }
+    }
+
+    .nav__link {
+      font-size: v.$xLargeSize;
+      font-weight: 300;
+      color: v.$whiteColor;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      position: relative;
+
+      @media #{v.$lgLayout} {
+        font-size: v.$largeFontSize;
+      }
+
+      @media #{v.$mdLayout} {
+        font-size: v.$mediumFontSize;
+      }
+
+      @media #{v.$xLayout} {
+        display: block;
+        padding: 10px;
+        width: 100%;
+        font-size: v.$largeFontSize;
+        font-weight: 400;
+        color: v.$primaryColor;
+      }
+
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   bottom: -5px;
+      //   left: 0;
+      //   width: 0;
+      //   height: 2px;
+      //   background-color: v.$secondaryColor;
+      //   transition: width 0.3s ease;
+      // }
+
+      &:hover,
+      &.active {
+        color: v.$otherColor;
+      }
     }
   }
 }

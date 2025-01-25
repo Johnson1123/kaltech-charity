@@ -9,8 +9,10 @@ import ParaText from "../small/ParaText";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { useIsMobile } from "../../utils/isMobile";
 
 function BannerBottom() {
+  const isMobile = useIsMobile();
   const testimonials = [
     {
       text: "The support and dedication shown by this organization has truly transformed lives in our community.",
@@ -44,11 +46,25 @@ function BannerBottom() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="testimonial__content">
-                <p className="testimonial__text">{testimonial.text}</p>
+              <div
+                className={
+                  isMobile
+                    ? "testimonial__content"
+                    : "testimonial__inverted-content"
+                }
+              >
+                <div className="testimonial__text-wrapper">
+                  <p className="testimonial__text title__text-primary">
+                    {testimonial.text}
+                  </p>
+                </div>
                 <div className="testimonial__author">
-                  <h4>{testimonial.author}</h4>
-                  <span>{testimonial.role}</span>
+                  <h4 className="title__medium-primary">
+                    {testimonial.author}
+                  </h4>
+                  <p className="para__medium-text-primary">
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
             </SwiperSlide>
