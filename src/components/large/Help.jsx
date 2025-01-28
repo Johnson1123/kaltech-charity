@@ -13,10 +13,10 @@ function Help() {
     <section className="help__container" aria-label="Ways to Help">
       <div className="help__top-wrapper">
         <div className="title__wrapper">
-          <TitleText text={title} name="title__text-primary" tag="h2" />
+          <TitleText text={title} name="title__primary" tag="h2" />
         </div>
         <div className="text__wrapper">
-          <ParaText text={text} name="para__small-text-primary" />
+          <ParaText text={text} name="paragrah__black" />
         </div>
       </div>
       <div className="help__box-container">

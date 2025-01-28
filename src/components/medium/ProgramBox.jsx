@@ -9,17 +9,17 @@ function ProgramBox({ image, text, title, amount_needed, amount_raised }) {
   const percentage = (amount_raised / amount_needed) * 100;
 
   return (
-    <article className="program__box-wrapper">
+    <div className="program__box-wrapper">
       <div className="program__image-wrapper">
         <img src={DummyImage} alt={title} />
       </div>
 
       <div className="program__description-container">
         <div className="program__title">
-          <TitleText text={title} name="title__text-primary" tag="h3" />
+          <TitleText text={title} name="title__md-primary" tag="h3" />
         </div>
         <div className="program__text">
-          <ParaText text={text} name="para__small-text-primary" />
+          <ParaText text={text} name="paragrah__black" />
         </div>
         <div className="program__amount">
           <span className="raised">${amount_raised}</span>
@@ -45,7 +45,7 @@ function ProgramBox({ image, text, title, amount_needed, amount_raised }) {
           <Donate text={"Donate"} />
         </div>
       </div>
-    </article>
+    </div>
   );
 }
 

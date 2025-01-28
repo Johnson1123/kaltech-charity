@@ -5,18 +5,18 @@ import ProgramBox from "../medium/ProgramBox";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useIsMobile } from "../../utils/isMobile";
+import { useIsMobile, useIsTablet } from "../../utils/isMobile";
 
 function Program() {
   const swiperRef = useRef(null);
   const title = "Programs and Initiatives";
-  const preview = useIsMobile() ? 1 : 3;
+  const preview = useIsTablet() ? 2 : 3;
 
   return (
     <section className="program__container" aria-label="Our Programs">
       <div className="program__top-container">
         <div className="title__wrapper">
-          <TitleText text={title} name="title__text-primary" tag="h2" />
+          <TitleText text={title} name="title__primary" tag="h2" />
         </div>
         <div className="program__control-wrapper">
           <button
@@ -40,7 +40,7 @@ function Program() {
         ref={swiperRef}
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={20}
-        slidesPerView={preview}
+        slidesPerView={useIsMobile() ? 1 : preview}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         loop={true}
       >

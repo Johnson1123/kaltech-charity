@@ -1,38 +1,52 @@
 @use "src/styles/sass/variables.scss" as v;
 @use "src/styles/sass/helpers.scss" as c;
 
-.title__text-primary {
-  @include c.TitleText(v.$primaryColor);
+.title__primary {
+  @include c.text__template;
+  @include c.title;
+  color: v.$primaryColor;
+}
+.title__white {
+  @include c.text__template;
+  @include c.title;
+  color: v.$whiteColor;
+}
 
-  @media #{v.$lgLayout} {
-    font-size: 28px;
-  }
+.title__md-primary {
+  @include c.text__template;
+  @include c.medium;
+  color: v.$primaryColor;
 }
-.title__text-white {
-  @include c.TitleText(v.$whiteColor);
-  @media #{v.$lgLayout} {
-    font-size: 28px;
-  }
+.title__md-white {
+  @include c.text__template;
+  @include c.medium;
+  color: v.$whiteColor;
 }
-.title__medium-primary {
-  @include c.mediumTitle(v.$primaryColor);
+
+.text__primary {
+  @include c.text__template;
+  @include c.text;
+  color: v.$primaryColor;
 }
-.title__medium-white {
-  @include c.mediumTitle(v.$whiteColor);
+.text__black {
+  @include c.text__template;
+  @include c.small__Text;
+  color: v.$bgBlack;
 }
-.para__small-text-primary {
-  @include c.paraText(v.$largeFontSize, v.$primaryColor);
-  @media #{v.$lgLayout} {
-    font-size: 16px;
-  }
-  line-height: 1.6;
-  margin-top: 20px;
+
+.text__white {
+  @include c.text__template;
+  @include c.small__Text;
+  color: v.$bgWhite;
 }
-.para__small-text-white {
-  @include c.paraText(v.$largeFontSize, v.$whiteColor);
-  @media #{v.$lgLayout} {
-    font-size: 16px;
-  }
-  line-height: 1.6;
-  margin-top: 20px;
+
+.paragrah__black {
+  @include c.text__template;
+  @include c.paragrah__black;
+  color: v.$darkColor;
+}
+.paragrah__white {
+  @include c.text__template;
+  @include c.paragrah__black;
+  color: v.$whiteColor;
 }

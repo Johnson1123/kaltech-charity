@@ -5,18 +5,18 @@ import { Icon } from "../../assets/icons";
 
 function HelpBox({ image, title, text, index }) {
   return (
-    <article
+    <div
       className="help__box-wrapper"
       style={{ animationDelay: `${index * 0.2}s` }}
     >
       <div className="help__box-image-wrapper">
         <img src={Icon} alt={`${title} icon`} />
       </div>
-      <MediumTitle text={title} name="title__medium-primary" tag="h3" />
+      <MediumTitle text={title} name="title__md-primary" tag="h3" />
       <div className="text__wrapper">
-        <ParaText text={text} name="title__small-text-primary" />
+        <ParaText text={text} name="paragrah__black" />
       </div>
-    </article>
+    </div>
   );
 }
 

@@ -24,13 +24,13 @@ function ProjectBox({
 
       <div className="project__description-container">
         <div className="project__category">
-          <TitleText text={category} name="para__small-text-primary" />
+          <TitleText text={category} name="text__primary" />
         </div>
         <div className="project__title">
-          <TitleText text={title} name="title__text-primary" tag="h3" />
+          <TitleText text={title} name="paragrah__black" tag="h3" />
         </div>
         <div className="project__description">
-          <ParaText text={description} name="para__small-text-primary" />
+          <ParaText text={description} name="paragrah__black" />
         </div>
 
         <div className="btn__wrapper">

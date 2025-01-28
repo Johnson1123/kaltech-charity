@@ -6,15 +6,15 @@ import Help from "../components/large/Help";
 import Project from "../components/large/Project";
 import Program from "../components/large/Program";
 import Event from "../components/large/Event";
-import Banner from "../components/large/Banner";
 import BannerBottom from "../components/medium/BannerBottom";
 import Scrolling from "../components/medium/Scrolling";
 import Community from "../components/large/Community";
+import HeroSection from "../components/large/HeroSection";
 
 function Home() {
   return (
     <MainLayout>
-      <Banner />
+      <HeroSection />
       <Donation />
       <Mission />
       <Help />

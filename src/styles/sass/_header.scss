@@ -2,51 +2,207 @@
 @use "src/styles/sass/_variables.scss" as v;
 
 .header__container {
-  @include c.flexRowCenter;
   background-color: #fff;
   padding: 10px 0;
   position: relative;
-
-  @media #{v.$xLayout} {
+  @media #{v.$mobile},#{v.$small} {
     padding: 5px 0;
   }
 }
 
 .header__wrapper {
+  margin: 0 auto;
   @include c.flexRowBetween;
+  align-items: center;
   background-color: v.$bgPrimary;
-  height: 100px;
+  height: 80px;
   width: 80%;
   padding: 10px 2%;
-  border-radius: 60px;
-
-  @media #{v.$lgLayout} {
-    width: 90%;
-  }
-
-  @media #{v.$mdLayout} {
+  border-radius: 50px;
+  @media #{v.$mobile}, #{v.$small} {
     width: 95%;
-    height: 80px;
+    height: 60px;
+    padding: 0 20px;
   }
 
-  @media #{v.$xLayout} {
-    width: 98%;
-    height: 70px;
-    padding: 5px 15px;
-    border-radius: 35px;
+  @media #{v.$tablet} {
+    width: 80%;
+    height: 80px;
+    padding: 0 40px;
+  }
+
+  .logo__wrapper {
+    margin-top: 5px;
+    width: 150px;
+    @media #{v.$mobile} {
+      width: 120px;
+    }
+  }
+
+  // Add animation keyframes
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav__wrapper {
+    display: none;
+    transform: none;
+    @media #{v.$mobile}, #{v.$small} {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: calc(100vh);
+      background-color: v.$bgWhite;
+      padding: 20px 10px;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      z-index: 100;
+      overflow-y: auto;
+      &.nav-active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @media #{v.$tablet} {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: calc(100vh);
+      background-color: v.$bgWhite;
+      padding: 40px 50px;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      z-index: 100;
+      overflow-y: auto;
+      &.nav-active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @media #{v.$laptop} {
+      display: flex;
+    }
+    @media #{v.$desktop} {
+      display: flex;
+    }
+
+    .nav-logo {
+      margin: 20px 0;
+      width: 150px;
+      @media #{v.$laptop} {
+        display: none;
+      }
+      @media #{v.$desktop} {
+        display: none;
+      }
+      @media #{v.$xLarge} {
+        display: none;
+      }
+    }
+
+    .nav__list {
+      @include c.flexRowBetween;
+      list-style: none;
+      gap: 25px;
+
+      @media #{v.$small},#{v.$mobile}, #{v.$tablet} {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 30px;
+      }
+
+      .nav__item {
+        @media #{v.$small}, #{v.$mobile}, #{v.$tablet} {
+          width: 100%;
+          text-align: left;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: slideIn 0.3s forwards;
+
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{$i * 0.1}s;
+            }
+          }
+        }
+      }
+
+      .nav__link {
+        @include c.small__Text;
+        color: v.$whiteColor;
+        text-decoration: none;
+        @media #{v.$tablet} {
+          font-size: v.$fs-16;
+          color: v.$primaryColor;
+          font-weight: 400;
+        }
+
+        @media #{v.$mobile}, #{v.$small} {
+          font-size: v.$fs-16;
+          display: block;
+          padding: 10px;
+          width: 100%;
+          font-weight: 400;
+          color: v.$primaryColor;
+        }
+        @media #{v.$laptop} {
+          font-size: v.$fs-14;
+        }
+        @media #{v.$desktop} {
+          font-size: v.$fs-16;
+        }
+
+        &:hover,
+        &.active {
+          color: v.$otherColor;
+        }
+      }
+    }
+    @media #{v.$laptop}, #{v.$desktop},#{v.$xLarge} {
+      .header__donate-other {
+        display: none;
+      }
+    }
   }
 
   .header__right {
     @include c.flexRowCenter;
-    gap: 20px;
-
-    @media #{v.$xLayout} {
-      gap: 10px;
+    justify-content: flex-end;
+    .header__donate-other {
+      display: none;
+      @media #{v.$laptop} {
+        display: flex;
+      }
+      @media #{v.$desktop} {
+        display: flex;
+      }
+      @media #{v.$xLarge} {
+        display: flex;
+      }
     }
   }
 
   .mobile-menu-btn {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: v.$whiteColor;
@@ -59,180 +215,14 @@
       color: v.$secondaryColor;
     }
 
-    @media #{v.$xLayout} {
-      display: block;
+    @media #{v.$laptop} {
+      display: none;
     }
-  }
-}
-
-.logo__wrapper {
-  width: 100px;
-  a {
-    color: #fff;
-    font-size: 32px;
-    font-weight: 700;
-    text-decoration: none;
-
-    @media #{v.$mdLayout} {
-      font-size: 28px;
+    @media #{v.$desktop} {
+      display: none;
     }
-
-    @media #{v.$xLayout} {
-      font-size: 24px;
+    @media #{v.$xLarge} {
+      display: none;
     }
-  }
-  // img {
-  //   width: 100%;
-  //   height: 50px;
-  // }
-}
-
-// Add animation keyframes
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav__wrapper {
-  @media #{v.$xLayout} {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: calc(100vh);
-    background-color: v.$bgWhite;
-    padding: 20px 10px;
-    transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-    z-index: 100;
-    overflow-y: auto;
-
-    &.nav-active {
-      transform: translateX(0);
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-  .nav-logo {
-    display: none;
-    margin: 20px 10px;
-    @media #{v.$mdLayout} {
-      display: block;
-    }
-
-    @media #{v.$xLayout} {
-      display: block;
-    }
-  }
-
-  .nav__list {
-    @include c.flexRowBetween;
-    list-style: none;
-    gap: 25px;
-
-    @media #{v.$mdLayout} {
-      gap: 15px;
-    }
-
-    @media #{v.$xLayout} {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 0;
-      gap: 20px;
-    }
-
-    .nav__item {
-      @media #{v.$xLayout} {
-        width: 100%;
-        text-align: left;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: slideIn 0.3s forwards;
-
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            animation-delay: #{$i * 0.1}s;
-          }
-        }
-      }
-    }
-
-    .nav__link {
-      font-size: v.$xLargeSize;
-      font-weight: 300;
-      color: v.$whiteColor;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-decoration: none;
-      position: relative;
-
-      @media #{v.$lgLayout} {
-        font-size: v.$largeFontSize;
-      }
-
-      @media #{v.$mdLayout} {
-        font-size: v.$mediumFontSize;
-      }
-
-      @media #{v.$xLayout} {
-        display: block;
-        padding: 10px;
-        width: 100%;
-        font-size: v.$largeFontSize;
-        font-weight: 400;
-        color: v.$primaryColor;
-      }
-
-      // &::after {
-      //   content: "";
-      //   position: absolute;
-      //   bottom: -5px;
-      //   left: 0;
-      //   width: 0;
-      //   height: 2px;
-      //   background-color: v.$secondaryColor;
-      //   transition: width 0.3s ease;
-      // }
-
-      &:hover,
-      &.active {
-        color: v.$otherColor;
-      }
-    }
-  }
-}
-
-.header__donate-btn {
-  @include c.btnText;
-  background-color: v.$bgSecodary;
-  color: v.$primaryColor;
-  border-radius: 40px;
-  transition: all 0.5s;
-  @media #{v.$lgLayout} {
-    padding: 20px;
-  }
-
-  @media #{v.$mdLayout} {
-    padding: 8px 15px;
-    font-size: v.$mediumFontSize;
-  }
-
-  @media #{v.$xLayout} {
-    padding: 6px 12px;
-    font-size: v.$xMediumFontSize;
-  }
-
-  &:hover {
-    background-color: v.$bgOther;
-    transform: scale(0.9);
   }
 }

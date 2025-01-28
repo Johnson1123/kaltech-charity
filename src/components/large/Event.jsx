@@ -12,10 +12,10 @@ function Event() {
     <section className="event__container" aria-label="Upcoming Events">
       <div className="event__top-container">
         <div className="title__wrapper">
-          <TitleText text={title} name="title__text-primary" tag="h2" />
+          <TitleText text={title} name="title__primary" tag="h2" />
         </div>
         <div className="text__wrapper">
-          <ParaText text={text} name="para__small-text-primary" />
+          <ParaText text={text} name="paragrah__black" />
         </div>
       </div>
       <div className="event__box-container">

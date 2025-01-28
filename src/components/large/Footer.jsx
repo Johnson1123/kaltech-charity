@@ -1,13 +1,14 @@
 import React from "react";
 import Donate from "../small/btn/Donate";
 import { Email, Phone, FaMap } from "../../assets/icons";
+import Logo from "../small/Logo";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__logo">
-          <h2>Chari</h2>
+          <Logo />
         </div>
         <div className="footer__content-wrapper">
           <div className="footer__values-newsletter-wrapper">

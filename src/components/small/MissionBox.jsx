@@ -22,11 +22,11 @@ function MissionBox({ title, icon, description, index }) {
           <img src={Icon} alt={`${title} icon`} />
         </div>
         <div className="mission__box-title">
-          <MediumTitle text={title} name="title__medium-white" tag="h3" />
+          <MediumTitle text={title} name="text__white" tag="h3" />
         </div>
       </div>
       <div className="mission__box-bottom">
-        <ParaText text={description} name="para__small-text-white" />
+        <ParaText text={description} name="text__white" />
       </div>
     </motion.div>
   );

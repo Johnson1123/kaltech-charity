@@ -60,37 +60,134 @@
 //     font-weight: 700;
 //   }
 // }
-@mixin mediumTitleText {
-  font-family: v.$primaryColor;
-  font-size: v.$mediumFontSize;
-  font-weight: 300;
+@mixin text__template {
+  line-height: 1.3;
 }
-@mixin smallText {
-  font-family: $primaryColor;
-  font-size: $mediumFontSize;
-  font-weight: 400;
-}
-@mixin btnText {
-  border: none;
-  padding: 20px 40px;
-  font-size: v.$mediumFontSize;
-  font-weight: 400;
+@mixin title {
+  font-size: v.$fs-20;
+  font-weight: 700;
+  font-size: clamp(20px, 1rem + 1vw, 70px);
+  // @media #{v.$tablet} {
+  //   font-size: v.$fs-24;
+  // }
+
+  // @media #{v.$laptop} {
+  //   font-size: v.$fs-28;
+  // }
+  // @media #{v.$desktop} {
+  //   font-size: v.$fs-38;
+  // }
+  // @media #{v.$xLarge} {
+  //   font-size: v.$fs-32;
+  // }
 }
 
-@mixin TitleText($color) {
-  color: $color;
-  font-size: v.$xxLargeSize;
-  font-weight: 700;
+@mixin medium {
+  font-weight: 500;
+  font-size: clamp(16px, 0.4rem + 1vw, 70px);
+  // @media #{v.$tablet} {
+  //   font-size: v.$fs-18;
+  //   margin-bottom: 15px;
+  // }
+
+  // @media #{v.$laptop} {
+  //   font-size: v.$fs-20;
+  //   margin-bottom: 10px;
+  // }
+  // @media #{v.$desktop} {
+  //   font-size: v.$fs-24;
+  //   margin-bottom: 10px;
+  // }
+  // @media #{v.$xLarge} {
+  //   font-size: v.$fs-28;
+  //   margin-bottom: 5px;
+  // }
 }
-@mixin mediumTitle($color) {
-  color: $color;
-  font-size: v.$xLargeSize;
+
+@mixin text {
+  font-size: v.$fs-14;
   font-weight: 700;
+  @media #{v.$tablet} {
+    font-size: v.$fs-16;
+    margin-bottom: 15px;
+  }
+
+  @media #{v.$laptop} {
+    font-size: v.$fs-20;
+    margin-bottom: 10px;
+  }
+  @media #{v.$desktop} {
+    font-size: v.$fs-24;
+    margin-bottom: 10px;
+  }
+  @media #{v.$xLarge} {
+    font-size: v.$fs-28;
+    margin-bottom: 5px;
+  }
 }
-@mixin paraText($size, $color) {
-  color: $color;
-  font-size: $size;
+
+@mixin small__Text {
   font-weight: 400;
+  line-height: 1.6;
+  font-size: clamp(10px, 0.3rem + 0.5vw, 70px);
+  // @media #{v.$tablet} {
+  //   font-size: v.$fs-14;
+  //   margin-bottom: 15px;
+  // }
+
+  // @media #{v.$laptop} {
+  //   font-size: v.$fs-14;
+  //   margin-bottom: 10px;
+  // }
+  // @media #{v.$desktop} {
+  //   font-size: v.$fs-16;
+  //   margin-bottom: 10px;
+  // }
+  // @media #{v.$xLarge} {
+  //   font-size: v.$fs-24;
+  //   margin-bottom: 5px;
+  // }
+}
+
+@mixin paragrah__black {
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: clamp(10px, 0.2rem + 1vw, 26px);
+  // @media #{v.$mobile} {
+  //   font-size: v.$fs-18;
+  // }
+  // @media #{v.$tablet} {
+  //   font-size: v.$fs-16;
+  // }
+
+  // @media #{v.$laptop} {
+  //   font-size: v.$fs-18;
+  // }
+  // @media #{v.$desktop} {
+  //   font-size: v.$fs-18;
+  // }
+  // @media #{v.$xLarge} {
+  //   font-size: v.$fs-24;
+  // }
+}
+
+@mixin btn__Text {
+  font-size: v.$fs-14;
+  font-weight: 400;
+  @media #{v.$tablet} {
+    font-size: v.$fs-16;
+  }
+
+  @media #{v.$laptop} {
+    font-size: v.$fs-14;
+  }
+  @media #{v.$desktop} {
+    font-size: v.$fs-16;
+  }
+  @media #{v.$xLarge} {
+    font-size: v.$fs-38;
+    margin-bottom: 5px;
+  }
 }
 
 .left {

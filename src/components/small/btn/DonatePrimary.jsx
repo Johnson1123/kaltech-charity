@@ -1,11 +1,11 @@
 import React from "react";
 
-function Donate({ label, links }) {
+function PrimaryBtn({ label, links }) {
   return (
-    <button onClick={() => {}} className="header__donate-btn-primary">
+    <button onClick={() => {}} className="header__donate-primary">
       {label ? label : "Donate Now"}
     </button>
   );
 }
 
-export default Donate;
+export default PrimaryBtn;

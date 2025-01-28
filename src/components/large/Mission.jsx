@@ -15,10 +15,10 @@ function Mission() {
     <section className="mission__wrapper" aria-label="Our Mission">
       <div className="mission__top-container">
         <div className="mission__title-wrapper">
-          <TitleText text={title} name="title__text-white" tag="h2" />
+          <TitleText text={title} name="title__white" tag="h2" />
         </div>
         <div className="mission__description-wrapper">
-          <ParaText text={description} name="para__small-text-white" />
+          <ParaText text={description} name="paragrah__white" />
         </div>
       </div>
 

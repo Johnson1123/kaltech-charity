@@ -2,16 +2,59 @@
 @use "src/styles/sass/helpers.scss" as c;
 
 .transparent__btn {
-  @include c.btnText;
+  @include c.btn__Text;
   border-radius: 50px;
   border: 1px solid v.$primaryColor;
   transition: all 1s;
+  padding: 8px 16px;
+  width: 30%;
   &:hover {
     border: none;
     background-color: v.$bgSecodary;
     transform: scale(0.9);
   }
+  @media #{v.$tablet}, #{v.$laptop} {
+    width: 50%;
+  }
+
+  @media #{v.$desktop} {
+    padding: 10px 24px;
+    width: 50%;
+  }
 }
+.header__donate-primary {
+  @include c.btn__Text;
+  border-radius: 30px;
+  border: 1px solid v.$primaryColor;
+  transition: background-color 1s;
+  background-color: v.$bgPrimary;
+  color: v.$secondaryColor;
+  padding: 8px 16px;
+  &:hover {
+    border: none;
+    background-color: v.$bgOther;
+    transform: scale(0.9);
+  }
+}
+
+.header__donate-other {
+  @include c.btn__Text;
+  border-radius: 30px;
+  border: 1px solid v.$primaryColor;
+  transition: all 1s;
+  background-color: v.$bgSecodary;
+  padding: 8px 16px;
+  color: v.$primaryColor;
+  &:hover {
+    border: none;
+    background-color: v.$bgOther;
+    transform: scale(0.9);
+  }
+  @media #{v.$small} {
+    padding: 6px 14px;
+  }
+}
+
 .readMore__btn {
   @include c.flexRowCenter;
   column-gap: 5px;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Donate from "../small/btn/Donate";
 import Nav from "../medium/Nav";
-// import { LogoTwo } from "../../assets/images";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useIsMobile } from "../../utils/isMobile";
+import Logo from "../small/Logo";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,23 +45,21 @@ function Header() {
     <header className="header__container">
       <div className="header__wrapper">
         <div className="logo__wrapper">
-          <a href="/">Logo</a>
+          <Logo />
         </div>
         <div className={`nav__wrapper ${isMenuOpen ? "nav-active" : ""}`}>
           <Nav closeMenu={closeMenu} />
         </div>
         <div className="header__right">
-          {mobile ? (
-            <button
-              className="mobile-menu-btn"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <FaTimes /> : <FaBars />}
-            </button>
-          ) : (
-            <Donate />
-          )}
+          <button
+            className="mobile-menu-btn"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
+          <Donate />
         </div>
       </div>
     </header>

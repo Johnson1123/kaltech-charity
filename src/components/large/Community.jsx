@@ -18,18 +18,20 @@ function Community() {
         <img
           src={DummyImage}
           alt=""
-          className={isMobile ? "" : "small top-right"}
+          className={isMobile ? "" : "small top-right rounded"}
         />
       </div>
       <div className="community__content-wrapper">
-        <TitleText
-          text={
-            "Join us in the journey to empower communities and transform lives."
-          }
-          name={"title__text-primary"}
-        />
-        <TitleText text="139,364+" name={"title__text-primary number"} />
-        <ParaText text={"People Alredy Join"} name="para__small-text-primary" />
+        <div className="text__title-wrapper">
+          <TitleText
+            text={
+              "Join us in the journey to empower communities and transform lives."
+            }
+            name={"title__primary"}
+          />
+        </div>
+        <TitleText text="139,364+" name={"title__primary number"} />
+        <ParaText text={"People Alredy Join"} name="text__black" />
         <div className="button__wrapper">
           <Donate text="Join Our Organization" />
         </div>
@@ -38,7 +40,7 @@ function Community() {
         <img
           src={DummyImage}
           alt=""
-          className={isMobile ? "" : "small buttom-left"}
+          className={isMobile ? "" : "small buttom-left rounded"}
         />
         <img
           src={DummyImage}
