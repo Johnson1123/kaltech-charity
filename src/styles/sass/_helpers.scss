@@ -152,7 +152,8 @@
 @mixin paragrah__black {
   font-weight: 300;
   line-height: 1.6;
-  font-size: clamp(10px, 0.2rem + 1vw, 26px);
+  // font-size: clamp(10px, 0.2rem + 1vw, 26px);
+  font-size: clamp(10px, 1vw + 1rem, 3rem);
   // @media #{v.$mobile} {
   //   font-size: v.$fs-18;
   // }

@@ -17,6 +17,11 @@
   @include c.medium;
   color: v.$primaryColor;
 }
+.title__md-other {
+  @include c.text__template;
+  @include c.medium;
+  color: v.$secondaryColor;
+}
 .title__md-white {
   @include c.text__template;
   @include c.medium;

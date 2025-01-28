@@ -13,7 +13,7 @@ function Footer() {
         <div className="footer__content-wrapper">
           <div className="footer__values-newsletter-wrapper">
             <div className="values">
-              <h3>Our Values</h3>
+              <h3 className="title__md-primary">Our Values</h3>
               <p>
                 At Charity 128, we prioritize transparency, integrity, and
                 inclusivity. These values guide our actions as we work
@@ -22,7 +22,7 @@ function Footer() {
               </p>
             </div>
             <div className="newsletter">
-              <h3>Sign up for our Newsletter</h3>
+              <h3 className="title__md-other">Sign up for our Newsletter</h3>
               <div className="newsletter-input">
                 <input type="email" placeholder="Enter your email" />
                 <Donate text={"Subscribe"} />
@@ -30,7 +30,7 @@ function Footer() {
             </div>
           </div>
           <div className="footer__useful-links-wrapper">
-            <h3>Useful Links</h3>
+            <h3 className="title__md-other">Useful Links</h3>
             <ul>
               <li>
                 <span></span>
@@ -55,7 +55,7 @@ function Footer() {
             </ul>
           </div>
           <div className="footer__contact-wrapper">
-            <h3>Contact Us</h3>
+            <h3 className="title__md-other">Contact Us</h3>
             <ul>
               <li>
                 <span>{<Email color="#c0fecf" />}</span>New York, NY 10001

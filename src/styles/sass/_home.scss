@@ -133,21 +133,22 @@
           border-bottom-left-radius: 40px;
           box-shadow: 0 40px 0 #fff;
           @media #{v.$small} {
-            right: -60px;
+            right: -40px;
             bottom: 0;
-            width: 60px;
+            width: 40px;
             height: 80px;
-            border-bottom-left-radius: 20px;
+            border-bottom-left-radius: 13px;
             box-shadow: 0 30px 0 0 #fff;
+            // background-color: red;
           }
           @media #{v.$mobile} {
             right: -60px;
             bottom: 0;
             width: 60px;
             height: 80px;
-            // background-color: red;
-            border-bottom-left-radius: 20px;
-            box-shadow: 0 30px 0 0 #fff;
+            background-color: red;
+            border-bottom-left-radius: 0;
+            box-shadow: 0 10px 0 blue;
           }
         }
         @media #{v.$small} {
@@ -289,17 +290,12 @@
     }
 
     .text__wrapper {
+      margin-top: 10px;
       @media #{v.$desktop} {
         margin-top: 20px;
       }
-      .para__small-text-primary {
-        @media #{v.$laptop} {
-          font-size: v.$fs-20;
-        }
-        @media #{v.$mobile} {
-          margin-top: 10px;
-          font-size: v.$fs-20 + 5px;
-        }
+      @media #{v.$small}, #{v.$mobile} {
+        margin-top: 30px;
       }
     }
 
@@ -361,11 +357,9 @@
     justify-content: space-between;
     align-items: center;
 
-    @media #{v.$mobile} {
+    @media #{v.$mobile}, #{v.$small} {
       flex-direction: column;
       gap: 20px;
-    }
-    @media #{v.$mobile} {
       flex-direction: column;
       gap: 20px;
     }
@@ -373,27 +367,9 @@
     .mission__title-wrapper {
       width: 45%;
 
-      @media #{v.$mobile} {
+      @media #{v.$mobile},#{v.$small} {
         width: 100%;
         text-align: center;
-      }
-      @media #{v.$mobile} {
-        width: 100%;
-        text-align: center;
-      }
-
-      .title__text-white {
-        @media #{v.$laptop} {
-          font-size: v.$desktop - 4px;
-        }
-
-        @media #{v.$mobile} {
-          font-size: v.$desktop - 8px;
-        }
-
-        @media #{v.$mobile} {
-          font-size: v.$desktop - 12px;
-        }
       }
     }
 
@@ -401,26 +377,10 @@
       padding: 0 0;
       width: 45%;
 
-      @media #{v.$mobile} {
+      @media #{v.$mobile},#{v.$small} {
         width: 100%;
         padding: 0;
         text-align: center;
-      }
-
-      @media #{v.$mobile} {
-        width: 100%;
-        padding: 0;
-      }
-
-      .para__small-text-white {
-        @media #{v.$laptop} {
-          font-size: v.$fs-20;
-        }
-
-        @media #{v.$mobile} {
-          font-size: v.$fs-20 + 4px;
-          margin-top: 0;
-        }
       }
     }
   }
@@ -568,7 +528,7 @@
     gap: 20px;
     margin-top: 20px auto;
     flex-wrap: wrap;
-    @media #{v.$mobile} {
+    @media #{v.$mobile}, #{v.$small} {
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
@@ -589,7 +549,7 @@
       animation: fadeInUp 0.5s ease forwards;
       opacity: 0;
       @media #{v.$mobile}, #{v.$small} {
-        width: 100%;
+        width: 43%;
         padding: 15px;
       }
       @media #{v.$tablet} {
@@ -861,11 +821,11 @@
 .project__container {
   margin-top: 50px;
 
-  @media #{v.$mobile} {
+  @media #{v.$mobile}, #{v.$small} {
     margin-top: 40px;
   }
 
-  @media #{v.$mobile} {
+  @media #{v.$tablet} {
     margin-top: 30px;
   }
 
@@ -876,7 +836,7 @@
     gap: 30px;
     margin-bottom: 40px;
 
-    @media #{v.$mobile} {
+    @media #{v.$mobile},#{v.$small} {
       flex-direction: column;
       gap: 20px;
       margin-bottom: 30px;
@@ -891,7 +851,7 @@
       width: 45%;
 
       @media #{v.$mobile}, #{v.$small} {
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
       }
       .title__primary {
@@ -902,10 +862,11 @@
     .text__wrapper {
       width: 45%;
 
-      @media #{v.$mobile} {
-        width: 100%;
+      @media #{v.$mobile}, #{v.$small} {
+        width: 90%;
+        text-align: center;
       }
-      @media #{v.$mobile} {
+      @media #{v.$tablet} {
         width: 100%;
       }
     }
@@ -920,7 +881,7 @@
       gap: 20px;
     }
 
-    @media #{v.$mobile} {
+    @media #{v.$mobile},#{v.$small} {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
@@ -1244,6 +1205,7 @@
       h3 {
         margin-bottom: 20px;
         color: v.$secondaryColor;
+        text-align: center;
       }
       p {
         color: v.$whiteColor;
@@ -1252,15 +1214,7 @@
 
     .newsletter {
       margin-top: 30px;
-      h3 {
-        margin-bottom: 20px;
-        color: v.$whiteColor;
-      }
-
-      p {
-        margin-bottom: 15px;
-        color: v.$secondaryColor;
-      }
+      text-align: center;
 
       .newsletter-input {
         display: flex;
@@ -1278,20 +1232,6 @@
             color: v.$secondaryColor;
           }
         }
-
-        button {
-          padding: 10px 20px;
-          border-radius: 5px;
-          background: v.$primaryColor;
-          color: white;
-          border: none;
-          cursor: pointer;
-          transition: opacity 0.3s;
-
-          &:hover {
-            opacity: 0.9;
-          }
-        }
       }
     }
   }
@@ -1299,7 +1239,7 @@
   &__useful-links-wrapper {
     h3 {
       margin-bottom: 20px;
-      color: v.$secondaryColor;
+      text-align: center;
     }
 
     ul {
@@ -1388,7 +1328,7 @@
       }
     }
   }
-  @media #{v.$mobile} {
+  @media #{v.$mobile},#{v.$small} {
     padding: 40px 0 20px;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
@@ -1415,15 +1355,15 @@
       .newsletter {
         .newsletter-input {
           flex-direction: column;
-
           input {
             width: 100%;
             padding: 15px 10px;
+            margin-top: 20px;
           }
-
           button {
-            width: 100%;
-            padding: 15px;
+            width: 50%;
+            padding: 10px 20px;
+            margin: 20px auto;
           }
         }
       }
@@ -1434,6 +1374,9 @@
       text-align: center;
 
       ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         li {
           margin-bottom: 15px;
         }
@@ -1441,35 +1384,35 @@
     }
   }
 
-  @media #{v.$small} {
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    padding: 30px 0 15px;
-    &__container {
-      width: 80%;
-      padding: 30px 0;
-    }
-    &__logo {
-      h2 {
-        font-size: 24px;
-      }
-    }
+  // @media #{v.$small} {
+  //   border-top-right-radius: 50px;
+  //   border-top-left-radius: 50px;
+  //   padding: 30px 0 15px;
+  //   &__container {
+  //     width: 80%;
+  //     padding: 30px 0;
+  //   }
+  //   &__logo {
+  //     h2 {
+  //       font-size: 24px;
+  //     }
+  //   }
 
-    &__values-newsletter-wrapper,
-    &__useful-links-wrapper,
-    &__contact-wrapper {
-      h3 {
-        font-size: 18px;
-        text-align: center;
-      }
-    }
+  //   &__values-newsletter-wrapper,
+  //   &__useful-links-wrapper,
+  //   &__contact-wrapper {
+  //     h3 {
+  //       font-size: 18px;
+  //       text-align: center;
+  //     }
+  //   }
 
-    &__copyright {
-      p {
-        font-size: 12px;
-      }
-    }
-  }
+  //   &__copyright {
+  //     p {
+  //       font-size: 12px;
+  //     }
+  //   }
+  // }
 }
 
 .bannerBottom__conatiner {
@@ -1509,7 +1452,7 @@
       width: 500px;
       margin: 0 auto;
       @media #{v.$small}, #{v.$mobile} {
-        width: 350px;
+        width: 300px;
       }
       &::after {
         content: "";
@@ -1550,7 +1493,7 @@
       @media #{v.$small}, #{v.$mobile} {
         left: 12%;
         top: -12;
-        width: 350px;
+        width: 300px;
         padding: 6px 20px;
       }
       &::before {
@@ -1565,10 +1508,12 @@
         border-top-right-radius: 45px;
         box-shadow: 0 -30px 0 #fff;
         @media #{v.$small}, #{v.$mobile} {
-          left: -29px;
-          top: 0%;
+          left: -20px;
+          top: -1px;
           z-index: -1;
           width: 30px;
+          border-top-right-radius: 50px;
+          box-shadow: 0 -20px 0 #fff;
         }
       }
     }
@@ -1719,13 +1664,11 @@
     flex-direction: column;
     align-items: center;
     width: 60%;
-    @media #{v.$mobile} {
-      width: 100%;
-    }
-    @media #{v.$mobile} {
+    @media #{v.$mobile}, #{v.$small} {
       width: 100%;
       margin-top: 20px;
     }
+
     .text__title-wrapper {
       text-align: center;
     }
