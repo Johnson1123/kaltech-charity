@@ -19,6 +19,7 @@
   width: 80%;
   padding: 10px 2%;
   border-radius: 50px;
+
   @media #{v.$mobile}, #{v.$small} {
     width: 95%;
     height: 60px;
@@ -26,7 +27,7 @@
   }
 
   @media #{v.$tablet} {
-    width: 80%;
+    width: 90%;
     height: 80px;
     padding: 0 40px;
   }

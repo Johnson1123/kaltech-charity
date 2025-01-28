@@ -9,4 +9,7 @@
   @media #{v.$mobile} {
     padding: 10px 5%;
   }
+  @media #{v.$tablet} {
+    padding: 10px 5%;
+  }
 }
