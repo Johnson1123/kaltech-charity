@@ -11,11 +11,20 @@
   @media #{v.$mobile} {
     height: 100vh;
     border-radius: 15px;
+    margin-top: 20px;
   }
 
   @media #{v.$tablet} {
     height: calc(100vh - 500px);
     border-radius: 10px;
+    margin-top: 30px;
+  }
+
+  @media #{v.$laptop}, #{v.$desktop}, #{v.$xLarge} {
+    margin-top: 30px;
+  }
+
+  @media screen {
   }
 
   .banner__image-wrapper {
@@ -1192,13 +1201,12 @@
   &__logo {
     margin-bottom: 40px;
     width: 100px;
-    h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
+    @media #{v.$small} {
+      margin: 0 auto;
     }
 
-    p {
-      color: v.$secondaryColor;
+    @media #{v.$tablet}, #{v.$laptop}, #{v.$desktop}, #{v.$xLarge} {
+      width: 150px;
     }
   }
 
@@ -1206,8 +1214,14 @@
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+
     margin-bottom: 50px;
+    @media #{v.$tablet}, #{v.$laptop} {
+      gap: 60px;
+    }
+    @media #{v.$desktop}, #{v.$xLarge} {
+      gap: 100px;
+    }
   }
 
   &__values-newsletter-wrapper {
@@ -1228,12 +1242,20 @@
     .newsletter {
       margin-top: 30px;
       text-align: center;
-
+      @media #{v.$tablet}, #{v.$laptop}, #{v.$desktop}, #{v.$xLarge} {
+        width: 100%;
+      }
       .newsletter-input {
         display: flex;
         gap: 10px;
         @media #{v.$tablet} {
           margin-top: 10px;
+        }
+
+        @media #{v.$tablet}, #{v.$laptop}, #{v.$desktop}, #{v.$xLarge} {
+          width: 100%;
+          margin-top: 30px;
+          justify-content: space-between;
         }
         input {
           width: 300px;
@@ -1245,6 +1267,9 @@
 
           &::placeholder {
             color: v.$secondaryColor;
+          }
+          @media #{v.$tablet}, #{v.$laptop}, #{v.$desktop}, #{v.$xLarge} {
+            width: 70%;
           }
         }
       }
@@ -1454,8 +1479,14 @@
     background-color: transparent;
 
     @media #{v.$small}, #{v.$mobile} {
+      width: 100%;
+    }
+    @media #{v.$small} {
       width: 95%;
-      margin: 0;
+      border-radius: 0px;
+      background: v.$bgWhite;
+      padding: 20px 10px;
+      border-radius: 10px;
     }
     .testimonial__text-wrapper {
       position: relative;
@@ -1468,21 +1499,31 @@
       border-bottom-right-radius: 0px;
       width: 500px;
       margin: 0 auto;
-      @media #{v.$small}, #{v.$mobile} {
-        width: 300px;
+      @media #{v.$small} {
+        width: 95%;
+        border-radius: 0px;
+        padding: 10px 0;
+        text-align: center;
       }
+      @media #{v.$mobile} {
+        width: 350px;
+      }
+
       &::after {
         content: "";
         z-index: -1;
         position: absolute;
         right: -40px;
-        bottom: 0;
+        bottom: -2px;
         width: 40px;
         height: 90px;
         background-color: transparent;
-        border-bottom-left-radius: 30px;
-        box-shadow: 0 30px 0 #fff;
-        @media #{v.$small}, #{v.$mobile} {
+        border-bottom-left-radius: 40px;
+        box-shadow: 0 40px 0 #fff;
+        @media #{v.$small} {
+          display: none;
+        }
+        @media #{v.$mobile} {
           right: -20px;
           bottom: 0;
           width: 20px;
@@ -1493,7 +1534,7 @@
     .testimonial__author {
       position: relative;
       left: 12%;
-      top: -12;
+      top: -4px;
       z-index: 1;
       width: 500px;
       padding: 10px 20px;
@@ -1507,47 +1548,53 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      @media #{v.$small}, #{v.$mobile} {
+      @media #{v.$mobile} {
         left: 12%;
         top: -12;
-        width: 300px;
+        width: 350px;
         padding: 6px 20px;
+      }
+      @media #{v.$small} {
+        left: 0;
+        top: 0;
+        width: 95%;
       }
       &::before {
         content: "";
         position: absolute;
-        left: -39px;
-        top: 0%;
-        z-index: -1;
+        left: -40px;
+        top: -8px;
+        z-index: 10;
         width: 40px;
-        height: 60px;
+        height: 80px;
         background-color: transparent;
-        border-top-right-radius: 45px;
-        box-shadow: 0 -30px 0 #fff;
-        @media #{v.$small}, #{v.$mobile} {
+        border-top-right-radius: 60px;
+        box-shadow: 0 -40px 0 #fff;
+        @media #{v.$small} {
+          display: none;
+        }
+        @media #{v.$mobile} {
           left: -20px;
           top: -1px;
           z-index: -1;
           width: 30px;
           border-top-right-radius: 50px;
-          box-shadow: 0 -20px 0 #fff;
         }
       }
     }
   }
-  .testimonial__author {
-    .title__medium-primary {
-      text-align: center;
-      margin-top: 20px;
-    }
-    p {
-      width: 100%;
+  // .testimonial__author {
+  //   .title__md-primary {
+  //     text-align: center;
+  //   }
+  //   p {
+  //     width: 100%;
 
-      text-align: center;
-    }
-  }
+  //     text-align: center;
+  //   }
+  // }
   @media #{v.$mobile} {
-    padding: 40px 0;
+    // padding: 40px 0;
 
     .content__wrapper {
       width: 95%;
