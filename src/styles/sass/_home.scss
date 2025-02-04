@@ -15,16 +15,19 @@
   }
 
   @media #{v.$tablet} {
-    height: calc(100vh - 500px);
+    height: 80vh;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 5px;
   }
 
   @media #{v.$laptop}, #{v.$desktop}, #{v.$xLarge} {
-    margin-top: 30px;
+    margin-top: 15px;
+    height: 80vh;
   }
 
-  @media screen {
+  @media #{v.$mobile__lanscape} {
+    margin-top: 0px;
+    height: 110vh;
   }
 
   .banner__image-wrapper {
@@ -43,11 +46,13 @@
     bottom: 0;
     left: 0;
     height: max-content;
-    border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-color: v.$bgWhite;
     width: 70%;
-
+    padding: 0;
+    @media #{v.$small} {
+      padding: 0;
+    }
     @media #{v.$tablet} {
       width: 65%;
     }
@@ -57,16 +62,18 @@
     @media #{v.$desktop} {
       width: 60%;
     }
-
+    @media #{v.$mobile__lanscape} {
+      width: 65%;
+    }
     .title__wrapper {
       position: relative;
       width: 100%;
       height: 50%;
-      background: #fff;
+      background: transparent;
       z-index: 2;
+      border: none;
       border-top-right-radius: 50px;
-      padding: 15px 15px;
-
+      padding: 15px 10px 0px 5px;
       &::before {
         position: absolute;
         content: "";
@@ -77,12 +84,16 @@
         height: 80px;
         background-color: transparent;
         border-bottom-left-radius: 40px;
-        box-shadow: 0 40px 0 #fff;
+        box-shadow: -0.5px 40px 0 #fff;
+        @media #{v.$small} {
+          top: -80px;
+          box-shadow: 0 40px 0 #fff;
+        }
       }
 
       &::after {
         content: "";
-        z-index: -1;
+        z-index: 0;
         position: absolute;
         right: -40px;
         bottom: 0;
@@ -90,21 +101,39 @@
         height: 80px;
         background-color: transparent;
         border-bottom-left-radius: 40px;
-        box-shadow: 0 40px 0 #fff;
+        box-shadow: -1px 40px #fff;
+        @media #{v.$mobile}, #{v.$tablet}, #{v.$laptop} {
+          position: absolute;
+          right: -40px;
+          bottom: 0;
+          width: 40px;
+        }
       }
       .title__primary {
         margin-bottom: 0;
-        @media #{v.$mobile}, #{v.$tablet} {
-          font-size: v.$fs-28;
+        @media #{v.$small} {
+          font-size: clamp(10px, 1vw + 0.8rem, 1.2rem);
+          padding: 5px 3px;
+        }
+        @media #{v.$mobile} {
+          font-size: clamp(10px, 1vw + 0.9rem, 1.2rem);
+        }
+        @media #{v.$tablet} {
+          font-size: clamp(10px, 1vw + 1.2rem, 3rem);
+          padding: 7px 0;
         }
         @media #{v.$laptop} {
-          font-size: v.$fs-32;
+          font-size: clamp(10px, 1vw + 1.3rem, 3rem);
         }
         @media #{v.$desktop} {
           font-size: 40px;
         }
         @media #{v.$xLarge} {
           font-size: v.$fs-38;
+        }
+        @media #{v.$mobile__lanscape} {
+          font-size: clamp(10px, 1vw + 1rem, 3rem);
+          line-height: 1.2;
         }
       }
     }
@@ -117,6 +146,7 @@
       width: 100%;
       background-color: v.$bgWhite;
       animation: fadeInLeft 1s ease forwards;
+
       .content__container {
         position: relative;
         z-index: 2;
@@ -128,7 +158,7 @@
         justify-content: space-between;
         align-items: center;
         width: 130%;
-        padding: 10px 15px;
+        padding: 0;
         border-top-right-radius: 20px;
         &::after {
           content: "";
@@ -140,63 +170,82 @@
           height: 80px;
           background-color: transparent;
           border-bottom-left-radius: 40px;
-          box-shadow: 0 40px 0 #fff;
+          box-shadow: -1px 40px #fff;
           @media #{v.$small} {
             right: -40px;
             bottom: 0;
             width: 40px;
             height: 80px;
             border-bottom-left-radius: 8px;
-            box-shadow: 0 30px 0 0 #fff;
+            box-shadow: -1px 40px 0 0 #fff;
             // background-color: red;
           }
           @media #{v.$mobile} {
-            right: -60px;
+            right: -20px;
             bottom: 0;
-            width: 60px;
+            width: 20px;
             height: 80px;
-            border-bottom-left-radius: 0;
-            box-shadow: 0 10px 0 blue;
+            border-bottom-left-radius: 20px;
+            box-shadow: -0.5px 40px 0 #fff;
           }
         }
         @media #{v.$small} {
           width: 130%;
           flex-direction: column;
           align-items: flex-start;
+          padding: 5px 5px;
         }
         @media #{v.$mobile} {
           width: 130%;
           flex-direction: column;
           align-items: flex-start;
         }
+
         @media #{v.$tablet} {
-          width: 125%;
+          width: 135%;
+          align-items: flex-start;
+          padding: 10px 5px;
         }
         @media #{v.$laptop} {
           width: 130%;
-          padding: 15px 30px 15px 15px;
+          padding: 15px 10px 0px 5px;
+          align-items: flex-start;
         }
         @media #{v.$desktop} {
           width: 120%;
           padding: 20px 30px 20px 15px;
+          align-items: flex-start;
         }
         @media #{v.$xLarge} {
           width: 120%;
-          padding: 20px 30px 20px 15px;
+        }
+        @media #{v.$mobile__lanscape} {
+          flex-direction: row;
+          align-items: flex-start;
+          padding: 10px 10px;
         }
         .paragrah__black {
           width: 70%;
           @media #{v.$small} {
-            width: 95%;
+            width: 100%;
+            line-height: 1.2;
+            padding: 5px;
           }
           @media #{v.$mobile} {
             width: 90%;
           }
+
           @media #{v.$tablet} {
-            width: 70%;
+            width: 75%;
+            padding: 5px;
+            font-size: clamp(10px, 1vw + 0.8rem, 2rem);
+            line-height: 1.3;
           }
           @media #{v.$laptop} {
-            width: 70%;
+            width: 75%;
+            font-size: clamp(10px, 1vw + 0.8rem, 2rem);
+            line-height: 1;
+            padding: 10px 0;
           }
           @media #{v.$desktop} {
             width: 80%;
@@ -204,13 +253,39 @@
           @media #{v.$xLarge} {
             width: 80%;
           }
+
+          @media #{v.$tablet__lanscape}, #{v.$laptop__lanscape} {
+            font-size: clamp(10px, 1vw + 0.8rem, 1.2rem);
+          }
+          @media #{v.$mobile__lanscape} {
+            width: 73%;
+            font-size: clamp(10px, 1vw + 0.65rem, 1.2rem);
+          }
+          @media #{tablet__lanscape} {
+            padding: 15px 10px;
+          }
         }
+
         .header__donate-primary {
           @media #{v.$small} {
-            margin-top: 20px;
+            margin-top: 15px;
+            margin-bottom: 3px;
           }
           @media #{v.$mobile} {
             margin-top: 15px;
+          }
+          @media #{v.$tablet} {
+            align-items: flex-start;
+          }
+          @media #{v.$laptop} {
+            align-items: flex-start;
+            margin-top: 0;
+          }
+          @media #{v.$desktop} {
+            margin-top: 0;
+          }
+          @media #{v.$mobile__lanscape}, #{v.$tablet__lanscape}, #{v.$laptop__lanscape} {
+            margin-top: 0;
           }
         }
       }
@@ -829,6 +904,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 5px;
+    @media #{v.$tablet} {
+      flex-direction: column;
+      gap: 15px;
+    }
   }
   .program__icon-wrapper {
     display: flex;
@@ -1469,6 +1548,7 @@
   align-items: center;
   margin-top: 50px;
   border-radius: 20px;
+
   .content__wrapper {
     width: 100%;
   }
@@ -1486,6 +1566,24 @@
       background: v.$bgWhite;
       padding: 20px 10px;
       border-radius: 10px;
+    }
+
+    @media #{v.$tablet} {
+      width: 98%;
+      margin: 0;
+    }
+
+    @media #{v.$laptop} {
+      width: 50%;
+    }
+    @media #{v.$desktop} {
+    }
+    @media #{v.$xLarge} {
+    }
+
+    @media #{v.$mobile__lanscape} {
+    }
+    @media #{v.$tablet__lanscape} {
     }
     .testimonial__text-wrapper {
       position: relative;
@@ -1508,17 +1606,26 @@
         width: 350px;
       }
 
+      @media #{v.$tablet} {
+        width: 90%;
+        font-size: clamp(10px, 1vw + 0.8rem, 1.2rem);
+        padding: 15px 20px;
+      }
+      @media #{v.$laptop}, #{v.$desktop} {
+        width: 50%;
+      }
+
       &::after {
         content: "";
         z-index: -1;
         position: absolute;
-        right: -40px;
-        bottom: -2px;
-        width: 40px;
-        height: 90px;
+        right: -20px;
+        bottom: 0px;
+        width: 20px;
+        height: 40px;
         background-color: transparent;
-        border-bottom-left-radius: 40px;
-        box-shadow: 0 40px 0 #fff;
+        border-bottom-left-radius: 20px;
+        box-shadow: -1px 20px 0 #fff;
         @media #{v.$small} {
           display: none;
         }
@@ -1533,7 +1640,7 @@
     .testimonial__author {
       position: relative;
       left: 12%;
-      top: -4px;
+      top: -7px;
       z-index: 1;
       width: 500px;
       padding: 10px 20px;
@@ -1558,17 +1665,25 @@
         top: 0;
         width: 95%;
       }
+      @media #{v.$tablet} {
+        width: 90%;
+        left: 5%;
+        padding: 10px 15px;
+      }
+      @media #{v.$laptop} {
+        width: 50%;
+      }
       &::before {
         content: "";
         position: absolute;
-        left: -40px;
-        top: -8px;
+        left: -20px;
+        top: 0px;
         z-index: 10;
-        width: 40px;
-        height: 80px;
+        width: 20px;
+        height: 40px;
         background-color: transparent;
-        border-top-right-radius: 60px;
-        box-shadow: 0 -40px 0 #fff;
+        border-top-right-radius: 20px;
+        box-shadow: 1px -20px #fff;
         @media #{v.$small} {
           display: none;
         }
@@ -1578,6 +1693,9 @@
           z-index: -1;
           width: 30px;
           border-top-right-radius: 50px;
+        }
+        @media #{v.$tablet} {
+          box-shadow: 0px -20px #fff;
         }
       }
     }
@@ -1672,21 +1790,25 @@
   .community__image-top-wrapper,
   .community__image-buttom-wrapper {
     img {
-      width: 45%;
-      height: 250px;
-    }
-    img {
       border-radius: 10px;
       object-fit: cover;
       &.big {
         width: 200px;
         height: 200px;
         border-radius: 225px;
+        @media #{v.$tablet} {
+          width: 150px;
+          height: 150px;
+        }
       }
       &.small {
         width: 200px;
         height: 200px;
         border-radius: 50%;
+        @media #{v.$tablet} {
+          width: 150px;
+          height: 150px;
+        }
       }
       &.buttom-right {
         position: absolute;

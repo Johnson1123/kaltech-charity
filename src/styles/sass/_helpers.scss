@@ -152,22 +152,28 @@
 @mixin paragrah__black {
   font-weight: 300;
   line-height: 1.6;
-  font-size: clamp(14px, 1vw + 0.8rem, 1.3rem);
+  // font-size: clamp(14px, 1vw + 0.8rem, 1.3rem);
+  font-size: clamp(
+    24px,
+    calc(24px + (36px - 24px) * ((100vw - 320px) / (100vw - 320px))),
+    36px
+  );
   // @media #{v.$mobile} {
-  //   font-size: v.$fs-18;
+  //   font-size: clamp(14px, 1vw + 0.8rem, 1.3rem);
   // }
   // @media #{v.$tablet} {
-  //   font-size: v.$fs-16;
+  //   font-size: clamp(14px, 1vw + 0.8rem, 1.3rem);
   // }
 
   // @media #{v.$laptop} {
-  //   font-size: v.$fs-18;
+  //   font-size: clamp(14px, 1vw + 0.8rem, 1.3rem);
   // }
   // @media #{v.$desktop} {
-  //   font-size: v.$fs-18;
+  //   font-size: clamp(14px, 0.5vw + 1rem, 1.3rem);
+  //   line-height: 1.4;
   // }
   // @media #{v.$xLarge} {
-  //   font-size: v.$fs-24;
+  //   font-size: clamp(14px, 1vw + 0.8rem, 1.3rem);
   // }
 }
 

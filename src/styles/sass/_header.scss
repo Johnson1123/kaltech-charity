@@ -3,10 +3,34 @@
 
 .header__container {
   background-color: #fff;
-  padding: 10px 0;
   position: relative;
-  @media #{v.$mobile},#{v.$small} {
-    padding: 5px 0;
+  width: 100%;
+  padding: 10px 2%;
+  margin: 0 auto;
+  @media #{v.$mobile} {
+    width: 100%;
+    padding: 10px 5%;
+    margin: 0 auto;
+  }
+  @media #{v.$tablet} {
+    width: 100%;
+    padding: 10px 10%;
+    margin: 0 auto;
+  }
+  @media #{v.$laptop} {
+    width: 90%;
+    padding: 10px 5%;
+    margin: 0 auto;
+  }
+  @media #{v.$desktop} {
+    width: 90%;
+    padding: 10px 5%;
+    margin: 0 auto;
+  }
+  @media #{v.$xLarge} {
+    width: 90%;
+    padding: 10px 10%;
+    margin: 0 auto;
   }
 }
 
@@ -16,18 +40,18 @@
   align-items: center;
   background-color: v.$bgPrimary;
   height: 80px;
-  width: 80%;
+  width: 100%;
   padding: 10px 2%;
   border-radius: 50px;
 
   @media #{v.$mobile}, #{v.$small} {
-    width: 95%;
+    width: 100%;
     height: 60px;
     padding: 0 20px;
   }
 
   @media #{v.$tablet} {
-    width: 90%;
+    width: 100%;
     height: 80px;
     padding: 0 40px;
   }

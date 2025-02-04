@@ -3,13 +3,7 @@
 .main__layout {
   width: 100%;
   padding: 10px 10%;
-  @media #{v.$small} {
-    padding: 10px 3%;
-  }
-  @media #{v.$mobile} {
-    padding: 10px 5%;
-  }
-  @media #{v.$tablet} {
-    padding: 10px 5%;
+  @media #{v.$mobile},#{v.$small} {
+    padding: 5px 5%;
   }
 }
